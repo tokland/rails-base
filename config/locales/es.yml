@@ -13,6 +13,13 @@ es:
   routes:
 
   activerecord:
+    errors:
+      messages_disabled:
+        blank: "no puede estar vacío"
+      models:
+        user:
+          attributes:
+          
     attributes:
       user:
         email: Correo electrónico

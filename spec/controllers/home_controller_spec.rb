@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe HomesController do
   render_views
 
