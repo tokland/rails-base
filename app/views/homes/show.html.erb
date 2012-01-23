@@ -1,7 +1,14 @@
-<ul>
-  <li><%= link_to("login", new_session_path) %></li>
-  <li><%= link_to("signup", new_user_path) %></li>
-</ul>
+<% if signed_in? %>
+  I'm logged in as <%= current_user.email %>
+  <%= link_to("logout", session_path, :method => :delete) %>
+<% else %>
+  <ul>
+    <% if signed_out? %>
+      <li><%= link_to("login", new_session_path) %></li>
+      <li><%= link_to("signup", new_user_path) %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <div>
   locale: <%= I18n.locale %>
