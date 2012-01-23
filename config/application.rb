@@ -1,9 +1,6 @@
 require File.expand_path('../boot', __FILE__)
-
-require 'lib/extensions'
+ 
 require 'rails/all'
-require 'lib/action_dispatch_extensions'
-require 'lib/sexy_scopes'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -20,6 +17,7 @@ module Senergy
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += [File.join(config.root, "lib")]
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
