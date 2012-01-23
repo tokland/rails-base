@@ -12,3 +12,12 @@ es:
 
   routes:
 
+  activerecord:
+    attributes:
+      user:
+        email: Correo electrónico
+        password: Contraseña
+        
+  users:
+    new:
+      signup: "Registro"

@@ -1,14 +1,20 @@
-locale: <%= I18n.locale %>
-<div id="content">
-  original content
+<ul>
+  <li><%= link_to("login", new_session_path) %></li>
+  <li><%= link_to("signup", new_user_path) %></li>
+</ul>
+
+<div>
+  locale: <%= I18n.locale %>
+  <div id="content">
+    original content
+  </div>
+
+  <div id="content2">
+    original content2: <%= User.all.map(&:email).join(", ") %>
+  </div>
 </div>
 
-<div id="content2">
-  original content2: <%= User.all.map(&:email).join(", ") %>
-</div>
-
-<%= javascript_tag do %>
-  $("#content").html('hello');
+<%= javascript_on_load do %>
+  home = new Home("arnau");
+  home.run();
 <% end %>
-
-
