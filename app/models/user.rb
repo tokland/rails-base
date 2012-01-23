@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   
   def hello
     "hello"
-  end    
+  end
 end
