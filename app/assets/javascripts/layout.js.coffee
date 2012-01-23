@@ -1,3 +1,4 @@
-$ ->
-  $("#notice .close").on "click", (ev) ->
-     $(this).up("#notice").fadeOut()
+# Rails-flash feedback box
+
+$(document).on "click", "#notice .close", (ev) ->
+   $(this).up("#notice").fadeOut()

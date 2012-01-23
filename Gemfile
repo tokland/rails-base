@@ -13,7 +13,7 @@ gem 'pry' # REPL alternative to Irb
 gem 'simple_form' # simple wrapper to build forms
 gem 'cancan' # authorization
 gem 'clearance' # authentication
-gem 'carrierwave' # file uploads
+gem 'carrierwave', '>= 0.5.8' # file uploads
 gem 'exception_notification' # send emails on exceptions
 gem 'kaminari' # pagination
 #gem 'i18n_routing', '~> 0.5.0' # translate routes

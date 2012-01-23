@@ -228,7 +228,7 @@ DEPENDENCIES
   cancan
   capybara (~> 1.0.0)
   capybara-webkit (~> 0.6.1)
-  carrierwave
+  carrierwave (>= 0.5.8)
   clearance
   coffee-rails
   default_value_for
