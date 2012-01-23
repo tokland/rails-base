@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,19 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20111003110023) do
 
-  create_table "preferences", :force => true do |t|
-    t.string   "name",       :null => false
-    t.integer  "owner_id",   :null => false
-    t.string   "owner_type", :null => false
-    t.integer  "group_id"
-    t.string   "group_type"
-    t.string   "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "preferences", ["owner_id", "owner_type", "name", "group_id", "group_type"], :name => "index_preferences_on_owner_and_name_and_preference", :unique => true
-
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "encrypted_password"
@@ -34,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20111003110023) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "temperature"
+    t.text     "settings"
   end
 
 end
