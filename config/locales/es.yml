@@ -1,0 +1,14 @@
+es:
+  resource:
+    home: inicio
+
+  named_routes_path:
+    start/:id: empezamos/:id
+    sign_up: alta
+
+  path_names:
+    bye: adios
+    sign_up: alta2
+
+  routes:
+

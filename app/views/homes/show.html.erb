@@ -1,0 +1,14 @@
+locale: <%= I18n.locale %>
+<div id="content">
+  original content
+</div>
+
+<div id="content2">
+  original content2: <%= User.all.map(&:email).join(", ") %>
+</div>
+
+<%= javascript_tag do %>
+  $("#content").html('hello');
+<% end %>
+
+

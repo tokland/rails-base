@@ -1,0 +1,28 @@
+development:
+  adapter: mysql2
+  host: localhost
+  username: user
+  password: pass
+  database: senergy_development
+
+test:
+  adapter: mysql2
+  host: localhost
+  username: user
+  password: pass
+  database: senergy_test
+
+staging:
+  adapter: mysql2
+  host: localhost
+  username: user
+  password: pass
+  database: senergy_staging
+
+production:
+  adapter: mysql2
+  host: localhost
+  username: user
+  password: pass
+  database: senergy_production
+

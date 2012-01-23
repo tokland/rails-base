@@ -1,0 +1,147 @@
+= Thin models
+
+https://github.com/jcasimir/draper: ArticleDecorator.find(1)
+
+http://solnic.eu/2011/08/01/making-activerecord-models-thin.html
+
+= State machines
+
+https://github.com/pluginaweek/state_machine
+
+= Nosql
+
+http://www.igvita.com/2010/03/01/schema-free-mysql-vs-nosql
+
+= Serialized options
+
+https://github.com/exceed/preferential/
+https://github.com/technoweenie/serialized_attributes
+https://github.com/pluginaweek/preferences <-
+
+añadir 
+
+has_preferences do |p|
+  p.define :is_active
+end
+
+= Precompile assets
+
+$ bundle exec rake assets:precompile
+
+Capistrano (v2.8.0) has a recipe to handle this in deployment. Add the following line to Capfile+:
+
+load 'deploy/assets'
+
+= Engines
+
+http://keithschacht.com/creating-a-rails-3-engine-plugin-gem/
+http://www.themodestrubyist.com/2010/03/01/rails-3-plugins---part-1---the-big-picture/
+http://www.themodestrubyist.com/2010/03/05/rails-3-plugins---part-2---writing-an-engine/
+http://www.themodestrubyist.com/2010/03/16/rails-3-plugins---part-3---rake-tasks-generators-initializers-oh-my/
+https://gist.github.com/e139fa787aa882c0aa9c
+https://github.com/charlotte-ruby/social_engine
+
+= Blog engine
+
+https://github.com/vigetlabs/acts_as_markup
+
+http://www.enkiblog.com/
+
+https://github.com/fdv/typo
+
+- mephisto
+
+- simpleLog
+
+= Stackoverflow clone
+
+- shapado: stackoverflow-like app written in ruby, mongomapper and mongodb
+
+http://gitorious.org/shapado
+
+= Auto-admin
+
+https://github.com/activescaffold/active_scaffold/wiki/getting-started
+
+si no se usa sacar ideas de como hacer admin por ajax
+
+= DB configuration
+
+https://github.com/Squeegy/rails-settings
+
+= Authorization
+
+https://github.com/ryanb/cancan
+
+= Clearance
+
+https://github.com/thoughtbot/clearance
+http://www.notgeeklycorrect.com/tutorials/2010/03/22/implementing-rpx-with-clearance-in-ruby-on-rails-in-5-minutes
+
+https://github.com/grosser/rpx_now
+
+= Init an application
+
+== Create the source tree
+
+$ rails new appname --skip-test-unit
+
+== rspec
+
+http://lindsaar.net/2010/4/14/installing_rspec_for_rails_3
+
+# Gemfile
+group :development, :test do
+  gem "rspec"
+  gem "rspec-rails"
+end
+
+$ bundle install
+$ script/rails g rspec:install
+
+== Remarkable
+
+Remarkable:
+
+For Rails 3 only activerecord (for now)
+
+https://github.com/remarkable/remarkable
+
+# Gemfile
+gem "rspec"
+gem "rspec-rails"
+gem "remarkable_activerecord"
+
+# spec_helper
+require 'rspec/rails'
+require 'remarkable/active_record'
+
+== Factory girl
+
+https://github.com/thoughtbot/factory_girl/wiki/Usage
+
+# Gemfile
+gem 'factory_girl_rails'
+
+== Capybara
+
+https://github.com/jnicklas/capybara
+
+#Gemfile
+gem 'capybara'
+
+# spec/spec_helper.rb
+require 'capybara/rspec'
+require 'capybara/rails'
+
+== Validate HTML+CSS
+
+https://github.com/wr0ngway/assert_valid_markup
+https://github.com/unboxed/be_valid_asset
+
+== Guard (autotest replacement)
+
+https://github.com/guard/guard-rspec
+https://github.com/guard/guard-spork
+
+$ bundle exec guard

@@ -1,0 +1,14 @@
+common: &common
+  placeholder: 1
+
+development:
+  <<: *common
+
+test:
+  <<: *common
+
+staging:
+  <<: *common
+
+production:
+  <<: *common
