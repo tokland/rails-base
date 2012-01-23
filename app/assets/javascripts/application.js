@@ -5,4 +5,5 @@
 //= require lib/underscore.js
 //= require lib/underscore_extensions.js
 
+//= require layout
 //= require home

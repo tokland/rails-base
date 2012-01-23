@@ -3,8 +3,8 @@ class window.Home
     @name = name
 
   hello: ->
-    'hello ' + @name
+    "hello #{@name}"
 
   run: ->
     s = _([1, 2, 3]).map((x) -> 2*x).join(", ")
-    $("#content2").html('hi from coffescript2 and Jquery: ' + @hello())
+    $("#content").html("from coffescript2 and Jquery: #{@hello()}")

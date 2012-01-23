@@ -7,9 +7,10 @@
   <%= csrf_meta_tag %>
   <%= yield :javascript %>
 </head>
+
 <body>
-
-<%= yield %>
-
+  <%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
+    
+  <%= yield %>
 </body>
 </html>
