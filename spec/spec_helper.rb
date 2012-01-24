@@ -12,7 +12,7 @@
   require 'capybara/rspec'
   require 'capybara/rails'
 
-  Capybara.javascript_driver = :webkit #:webkit, :selenium
+  Capybara.javascript_driver = :webkit #:webkit | :selenium
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.

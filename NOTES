@@ -1,3 +1,17 @@
+= Tasks
+
+- i18n routes: https://github.com/francesc/rails-translate-routes
+- validate HTML output: http://stackoverflow.com/questions/1287952/how-do-i-validate-xhtml-with-nokogiri
+- enable ruby-debug
+
+= Enable Ruby-debug in Ruby 1.9.3
+
+$ bash < <(curl -L https://raw.github.com/gist/1333785)
+$ curl -OL http://rubyforge.org/frs/download.php/75415/ruby-debug-base19-0.11.26.gem
+$ gem install ruby-debug-base19-0.11.26.gem -- --with-ruby-include=/home/arnau/.rvm/rubies/ruby-1.9.3-p0/include/ruby-1.9.1/ruby-1.9.3-p0/
+
+Gemfile -> gem "ruby-debug19", :require => "ruby-debug"
+
 = Thin models
 
 https://github.com/jcasimir/draper: ArticleDecorator.find(1)
@@ -16,13 +30,8 @@ http://www.igvita.com/2010/03/01/schema-free-mysql-vs-nosql
 
 https://github.com/exceed/preferential/
 https://github.com/technoweenie/serialized_attributes
-https://github.com/pluginaweek/preferences <-
-
-añadir 
-
-has_preferences do |p|
-  p.define :is_active
-end
+https://github.com/pluginaweek/preferences 
+Rails 3.2 sheep ActiveRecord Store <-
 
 = Precompile assets
 
@@ -138,6 +147,7 @@ require 'capybara/rails'
 
 https://github.com/wr0ngway/assert_valid_markup
 https://github.com/unboxed/be_valid_asset
+http://stackoverflow.com/questions/1287952/how-do-i-validate-xhtml-with-nokogiri
 
 == Guard (autotest replacement)
 

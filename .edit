@@ -1,6 +1,8 @@
 NOTES
 Gemfile
 config/routes.rb
+config/locales/es.yml
+app/models/user.rb
 app/models/ability.rb
 $
 $

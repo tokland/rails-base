@@ -3,12 +3,11 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.0'
 gem 'sqlite3'
 gem 'mysql2', '~> 0.3.7'
-#gem 'jquery-rails', '~> 2.0.0'
-gem 'jquery-rails', '~> 1.0.19'
-gem 'ruby-debug19'
-gem 'rack-mount'
+gem 'jquery-rails', '~> 2.0.0'
+gem "ruby-debug19", :require => "ruby-debug"
 
 gem 'block_helpers', :git => 'git://github.com/fastcatch/block_helpers.git'
+gem 'nokogiri' # XML/HTML parser-builder
 gem 'pry' # REPL alternative to Irb
 gem 'simple_form' # simple wrapper to build forms
 gem 'cancan' # authorization
@@ -20,8 +19,6 @@ gem 'kaminari' # pagination
 gem 'default_value_for' # default values for AR
 gem 'squeel' # AR wrapper over ARel
 gem 'navvy' # Background jobs
-
-#plugin 'preferential' # Wrapper for serialized attributes 
 
 group :assets do
   gem 'sass-rails'
