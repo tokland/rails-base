@@ -19,6 +19,9 @@ gem 'kaminari' # pagination
 gem 'default_value_for' # default values for AR
 gem 'squeel' # AR wrapper over ARel
 gem 'navvy' # Background jobs
+gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git' # check #931
+gem 'sass-rails'
+gem "meta_search", '>= 1.1.0.pre'
 
 group :assets do
   gem 'sass-rails'
