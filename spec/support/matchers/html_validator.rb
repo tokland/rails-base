@@ -2,7 +2,6 @@ RSpec::Matchers.define :be_valid_xhtml do |expected|
   description { "be valid XHTML" }
     
   match do |response|
-    require 'ruby-debug'; debugger; 1; 
     HtmlValidator.valid?(response.body)
   end
 

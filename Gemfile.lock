@@ -37,8 +37,6 @@ GEM
       multi_json (~> 1.0)
     archive-tar-minitar (0.5.2)
     arel (3.0.0)
-    be_valid_asset (1.1.2)
-      rspec
     builder (3.0.0)
     cancan (1.6.7)
     capybara (1.0.1)
@@ -221,7 +219,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  be_valid_asset
   block_helpers!
   cancan
   capybara (~> 1.0.0)

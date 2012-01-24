@@ -13,7 +13,6 @@ describe HomesController do
 
     it { response.should be_success }
     it { response.should render_template('show') }
-    #it { response.should be_valid_xhtml }
     it { response.should be_valid_xhtml }
   end
 end

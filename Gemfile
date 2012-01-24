@@ -37,7 +37,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara', '~> 1.0.0'
   gem 'capybara-webkit', '~> 0.6.1'
-  gem 'be_valid_asset'
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'hirb'
