@@ -1,8 +1,11 @@
 = Tasks
 
 - i18n routes: https://github.com/francesc/rails-translate-routes
-- validate HTML output: http://stackoverflow.com/questions/1287952/how-do-i-validate-xhtml-with-nokogiri
-- enable ruby-debug
+- html_validator as gem: https://github.com/radar/guides/blob/master/gem-development.md
+- admin panel:
+
+https://github.com/pilu/web-app-theme
+http://activeadmin.info/
 
 = Enable Ruby-debug in Ruby 1.9.3
 

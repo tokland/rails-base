@@ -15,7 +15,7 @@ gem 'clearance' # authentication
 gem 'carrierwave', '>= 0.5.8' # file uploads
 gem 'exception_notification' # send emails on exceptions
 gem 'kaminari' # pagination
-#gem 'i18n_routing', '~> 0.5.0' # translate routes
+#gem "rails-translate-routes" # no support for rails 3.2 yet
 gem 'default_value_for' # default values for AR
 gem 'squeel' # AR wrapper over ARel
 gem 'navvy' # Background jobs
