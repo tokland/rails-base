@@ -20,8 +20,6 @@ Senergy::Application.configure do
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
   
-  config.reload_classes_only_on_change = false
-
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
@@ -32,4 +30,11 @@ Senergy::Application.configure do
   config.assets.debug = true
   
   config.action_mailer.default_url_options = {:host => 'localhost:3020'}
+  
+  # Rails 3.2 added smart auto-reloading, but activeadmin (0.3.4) #
+  # does not reload its classes if this value is set to true.
+  # https://github.com/gregbell/active_admin/issues/891 
+  # https://github.com/gregbell/active_admin/pull/931
+  config.reload_classes_only_on_change = true
+  config.watchable_dirs[File.join(config.root, "app/admin")] = ["rb"]
 end

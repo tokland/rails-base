@@ -6,6 +6,6 @@ app/models/user.rb
 app/models/ability.rb
 $
 $
-$ bundle exec guard
+$ bundle exec guard start
 $ bundle exec rails console
 $ bundle exec rails server -p3020

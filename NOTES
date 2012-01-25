@@ -1,14 +1,14 @@
-= Tasks
+= i18n routes
 
-- html_validator as gem: https://github.com/radar/guides/blob/master/gem-development.md
-*- change clerance -> devise (branch active_admin)
- *- admin panel with active_admin 
+Still not working for Rails 3.2.0
+
+https://github.com/francesc/rails-translate-routes
+
+= Active_admin 
 
 https://github.com/pilu/web-app-theme
 http://activeadmin.info/
 http://net.tutsplus.com/tutorials/ruby/create-beautiful-administration-interfaces-with-active-admin/
-
-- (*) i18n routes: https://github.com/francesc/rails-translate-routes
 
 = Enable Ruby-debug in Ruby 1.9.3
 
