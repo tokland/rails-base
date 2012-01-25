@@ -44,6 +44,7 @@ group :development, :test do
   gem 'guard-spork'
   gem 'hirb'
   gem 'timecop'
+  gem 'html_validator'
 end
 
 group :development, :preproduction, :production do
