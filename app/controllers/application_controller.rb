@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include Clearance::Authentication
   before_filter :set_locale_from_url
   protect_from_forgery
 

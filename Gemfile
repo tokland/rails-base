@@ -9,12 +9,12 @@ gem "ruby-debug19", :require => "ruby-debug"
 gem 'block_helpers', :git => 'git://github.com/fastcatch/block_helpers.git'
 gem 'nokogiri' # XML/HTML parser-builder
 gem 'pry' # REPL alternative to Irb
-gem 'simple_form' # simple wrapper to build forms
+#gem 'simple_form' # simple wrapper to build forms
 gem 'cancan' # authorization
-gem 'clearance' # authentication
-gem 'carrierwave', '>= 0.5.8' # file uploads
+gem 'devise' # authentication
+#gem 'carrierwave', '>= 0.5.8' # file uploads
 gem 'exception_notification' # send emails on exceptions
-gem 'kaminari' # pagination
+#gem 'kaminari' # pagination
 #gem "rails-translate-routes" # no support for rails 3.2 yet
 gem 'default_value_for' # default values for AR
 gem 'squeel' # AR wrapper over ARel

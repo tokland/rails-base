@@ -1,23 +1,21 @@
-<% if signed_in? %>
+<% if user_signed_in? %>
   I'm logged in as <%= current_user.email %>
-  <%= link_to("logout", session_path, :method => :delete) %>
+  <%= link_to("logout", destroy_user_session_path, :method => :delete) %>
 <% else %>
   <ul>
-    <% if signed_out? %>
-      <li><%= link_to("login", new_session_path) %></li>
-      <li><%= link_to("signup", new_user_path) %></li>
-    <% end %>
+    <li><%= link_to("login", new_user_session_path) %></li>
+    <li><%= link_to("signup", new_user_registration_path) %></li>
   </ul>
 <% end %>
 
 <div>
   locale: <%= I18n.locale %>
   <div id="content">
-    original content
+    original content1
   </div>
 
   <div id="content2">
-    original content2: <%= User.all.map(&:email).join(", ") %>
+    original content2
   </div>
 </div>
 

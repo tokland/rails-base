@@ -8,3 +8,4 @@ class window.Home
   run: ->
     s = _([1, 2, 3]).map((x) -> 2*x).join(", ")
     $("#content").html("from coffescript2 and Jquery: #{@hello()}")
+    $("#content2").html("hi there")
