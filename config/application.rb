@@ -54,4 +54,9 @@ module Senergy
       raw %(<span class="field_with_errors">#{html_tag}</span>)
     end    
   end
+
+  require 'extensions'
+  require 'active_record_extensions'
+  require 'action_dispatch_extensions'
+  require 'sexy_scopes'  
 end
