@@ -22,6 +22,7 @@ gem 'navvy' # Background jobs
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git' # check #931
 gem 'sass-rails'
 gem "meta_search", '>= 1.1.0.pre'
+gem "bluecloth" # Markdown 
 
 group :assets do
   gem 'sass-rails'

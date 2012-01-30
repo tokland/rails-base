@@ -1,7 +1,11 @@
 ActiveAdmin.register Page do
   filter :key_or_title_or_body, :as => :string
   filter :status, :as => :select, :collection => Page::Statuses
-  
+
+  show do
+    attributes_table :id, :key, :status, :slug, :language, :title, :body_html
+  end
+    
   index do
     column :id
     column :key
@@ -24,7 +28,7 @@ ActiveAdmin.register Page do
     
     f.inputs "Contents" do
       f.input :title
-      f.input :body
+      f.input :body, :input_html => {:id => "wmd-input"}
     end
     
     f.buttons

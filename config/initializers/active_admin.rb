@@ -1,5 +1,4 @@
 ActiveAdmin.setup do |config|
-
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -103,7 +102,6 @@ ActiveAdmin.setup do |config|
   #     without_comments.allow_comments = false
   #   end
 
-
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
@@ -111,19 +109,10 @@ ActiveAdmin.setup do |config|
   #
   # config.before_filter :do_something_awesome
 
-
-  # == Register Stylesheets & Javascripts
-  #
-  # We recommend using the built in Active Admin layout and loading
-  # up your own stylesheets / javascripts to customize the look
-  # and feel.
-  #
-  # To load a stylesheet:
-  #   config.register_stylesheet 'my_stylesheet.css'
-  #
-  # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
-  #   config.register_stylesheet 'my_print_stylesheet.css', :media => :print
-  #
-  # To load a javascript file:
-  #   config.register_javascript 'my_javascript.js'
+  config.register_stylesheet 'markdown.css'
+  
+  config.register_javascript "Markdown.Converter"
+  config.register_javascript "Markdown.Sanitizer"
+  config.register_javascript "Markdown.Editor"
+  config.register_javascript "admin/pages"
 end

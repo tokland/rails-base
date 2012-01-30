@@ -1,6 +1,16 @@
-// Active Admin CSS Styles
 @import "active_admin/mixins";
 @import "active_admin/base";
 
-// To customize the Active Admin interfaces, add your
-// styles here:
+.markdown-box {
+  display: inline-block;
+  width: 76%;
+}
+
+#wmd-preview {
+  padding: 10px;
+}
+
+#wmd-preview ul {
+  list-style-type: square;
+} 
+  
