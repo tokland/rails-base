@@ -21,7 +21,17 @@ end
 
 Spork.each_run do
   load "#{Rails.root}/config/routes.rb"
-  Dir["#{Rails.root}/app/**/*.rb"].each {|f| load f}
+  Dir["#{Rails.root}/app/**/*.rb"].each { |f| load(f) }
   FactoryGirl.reload
-  #ActiveSupport::Dependencies.clear  
 end
+
+# HACK: this way the capybara driver uses the same connection that the spec
+class ActiveRecord::Base
+  mattr_accessor :shared_connection
+  @@shared_connection = nil
+
+  def self.connection
+    @@shared_connection || retrieve_connection
+  end
+end
+ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
