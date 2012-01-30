@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Ability do
-  describe "as normal user" do
+  describe "normal user" do
     let(:user) { Factory(:user) }
     let(:page) { Factory(:page) }
     subject { Ability.new(user) }

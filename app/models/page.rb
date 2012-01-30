@@ -7,5 +7,11 @@ class Page < ActiveRecord::Base
   validates :title, :presence => true
   validates :status, :presence => true, :inclusion => {:in => Statuses}
   
+  scope :published, where(:status => "published")
+  
   before_save { |page| page.body_html = BlueCloth.new(body).to_html }
+  
+  def to_param
+    slug
+  end
 end

@@ -111,6 +111,8 @@ ActiveAdmin.setup do |config|
 
   config.register_stylesheet 'markdown.css'
   
+  config.register_javascript "jquery"
+  config.register_javascript "jquery_extensions"
   config.register_javascript "Markdown.Converter"
   config.register_javascript "Markdown.Sanitizer"
   config.register_javascript "Markdown.Editor"
