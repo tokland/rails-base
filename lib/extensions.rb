@@ -25,7 +25,7 @@ module Enumerable
 end
 
 class MaybeWrapper
-  instance_methods.each { |m| undef_method m unless m =~ /^__/ || m == :object_id }
+  instance_methods.each { |m| undef_method m unless m == :object_id || m =~ /^__/ }
 
   def method_missing(*args, &block)
     nil

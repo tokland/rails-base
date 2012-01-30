@@ -3,8 +3,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :password, :password_confirmation, :remember_me
   store :settings,  accessors: [:color, :age]
-  
-  def hello
-    "hello"
-  end
+  scope :me, where(:email => "tokland@gmail.com")
 end

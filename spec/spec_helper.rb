@@ -8,9 +8,9 @@ Spork.prefork do
   require 'capybara/rails'
   require 'factory_girl'
   require 'html_validator'
+  require "cancan/matchers"
 
   Capybara.javascript_driver = :webkit #:webkit | :selenium
-  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   RSpec.configure do |config|
     config.mock_with :rspec # :spec | :mocha | :flexmock | :rr
@@ -21,17 +21,8 @@ end
 
 Spork.each_run do
   load "#{Rails.root}/config/routes.rb"
-  Dir["#{Rails.root}/app/**/*.rb"].each { |f| load(f) }
+  load File.join(Rails.root, "app/models/user.rb")
   FactoryGirl.reload
 end
 
-# HACK: this way the capybara driver uses the same connection that the spec
-class ActiveRecord::Base
-  mattr_accessor :shared_connection
-  @@shared_connection = nil
-
-  def self.connection
-    @@shared_connection || retrieve_connection
-  end
-end
-ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| load f }
