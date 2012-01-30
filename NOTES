@@ -1,6 +1,11 @@
 = Tasks
 
-- Simple CMS (plain)
+- Interpolate routes in page body
+- Default records on load (pages, ...)
+
+= Markdown with preview
+
+* - Simple CMS (plain)
   * Page: language:string slug:string title:string body:text body_html:text status:string (draft|published) 
   
   * Markdown: with preview -> 

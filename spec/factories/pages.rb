@@ -7,5 +7,11 @@ FactoryGirl.define do
     body "body"
     body_html "<p>body</p>"
     status "draft"
+    
+    factory :help_page do
+      title "Help"
+      key "help"
+      slug "help"
+    end
   end
 end
