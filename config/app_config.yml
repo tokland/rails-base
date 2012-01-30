@@ -1,5 +1,5 @@
 common: &common
-  placeholder: 1
+  languages: [en]
 
 development:
   <<: *common

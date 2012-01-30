@@ -8,7 +8,6 @@ Spork.prefork do
   require 'capybara/rails'
   require 'factory_girl'
   require 'html_validator'
-  require 'ruby-debug'; debugger; 1; 
 
   Capybara.javascript_driver = :webkit #:webkit | :selenium
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}

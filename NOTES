@@ -1,3 +1,12 @@
+= Tasks
+
+- Simple CMS (plain)
+  * Page: language:string slug:string title:string body:text body_html:text status:string (draft|published) 
+  
+  * Markdown: with preview -> 
+      http://code.google.com/p/pagedown/
+      http://pagedown.googlecode.com/hg/demo/browser/demo.html 
+
 = i18n routes
 
 Still not working for Rails 3.2.0
