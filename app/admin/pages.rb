@@ -1,6 +1,10 @@
 ActiveAdmin.register Page do
   filter :key_or_title_or_body, :as => :string
-  filter :status, :as => :select, :collection => Page::Statuses
+  #filter :status, :as => :select, :collection => Page::Statuses
+  
+  scope :all, :default => true
+  scope :published
+  scope :draft
 
   show do
     attributes_table :id, :key, :status, :slug, :language, :title, :body_html
