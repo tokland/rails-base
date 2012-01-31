@@ -4,4 +4,6 @@
 //= require underscore.js
 //= require underscore_extensions.js
 
-//= require_tree .
+//= require layout
+//= require home
+//= require pages

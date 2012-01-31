@@ -10,8 +10,4 @@ class Page < ActiveRecord::Base
   scope :published, where(:status => "published")
   
   before_save { |page| page.body_html = BlueCloth.new(body).to_html }
-  
-  def to_param
-    slug
-  end
 end
