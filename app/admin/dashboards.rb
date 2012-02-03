@@ -1,8 +1,8 @@
 ActiveAdmin::Dashboards.build do
   section "Recent created users" do
     table_for User.order("created_at DESC").limit(10) do
-      column("Id") { |user| user.id } 
       column("Email") { |user| link_to(user.email, admin_user_path(user)) }
+      column("Created at") { |user| I18n.localize(user.created_at, :format => :long) }
     end
   end
 

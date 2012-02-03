@@ -1,16 +1,16 @@
 = Tasks
 
-- Interpolate routes in page body
+* - Interpolate routes in page body
 - Default records on load (pages, ...)
 
 = Markdown with preview
 
 * - Simple CMS (plain)
-  * Page: language:string slug:string title:string body:text body_html:text status:string (draft|published) 
+* Page: language:string slug:string title:string body:text body_html:text status:string (draft|published) 
   
-  * Markdown: with preview -> 
-      http://code.google.com/p/pagedown/
-      http://pagedown.googlecode.com/hg/demo/browser/demo.html 
+* Markdown: with preview -> 
+    http://code.google.com/p/pagedown/
+    http://pagedown.googlecode.com/hg/demo/browser/demo.html 
 
 = i18n routes
 
@@ -51,7 +51,7 @@ http://www.igvita.com/2010/03/01/schema-free-mysql-vs-nosql
 https://github.com/exceed/preferential/
 https://github.com/technoweenie/serialized_attributes
 https://github.com/pluginaweek/preferences 
-Rails 3.2 sheep ActiveRecord Store <-
+Rails 3.2 ships ActiveRecord Store <-
 
 = Precompile assets
 

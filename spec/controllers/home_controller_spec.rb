@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe HomesController do
-  before { FactoryGirl.create(:help_page) }
+  before { seed_database }
    
   render_views
 

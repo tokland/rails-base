@@ -1,5 +1,6 @@
 ActiveAdmin.register Page do
   filter :key_or_title_or_body, :as => :string
+  filter :id
   #filter :status, :as => :select, :collection => Page::Statuses
   
   scope :all, :default => true

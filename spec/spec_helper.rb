@@ -9,13 +9,15 @@ Spork.prefork do
   require 'factory_girl'
   require 'html_validator'
   require "cancan/matchers"
-
-  Capybara.javascript_driver = :webkit #:webkit | :selenium
+  require "support/application"
+  
+  Capybara.javascript_driver = :webkit # :webkit | :selenium
 
   RSpec.configure do |config|
-    config.mock_with :rspec # :spec | :mocha | :flexmock | :rr
+    config.mock_with :rspec # :rspec | :mocha | :flexmock | :rr
     config.use_transactional_fixtures = true
     config.include Devise::TestHelpers, :type => :controller
+    config.include Senergy::AppHelpers
   end
 end
 
@@ -25,4 +27,4 @@ Spork.each_run do
   FactoryGirl.reload
 end
 
-Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| load f }
+load "support/capybara_shared_connection.rb"

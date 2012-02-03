@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'home page', :type => :acceptance, :js => true do
-  before { FactoryGirl.create(:help_page) }
+  before { seed_database }
   
   it 'should welcome the user' do
     visit '/'

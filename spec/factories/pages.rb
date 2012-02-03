@@ -15,11 +15,5 @@ FactoryGirl.define do
     factory :published_page do
       status "published"
     end
-    
-    factory :help_page do
-      title "Help"
-      key "help"
-      slug "help"
-    end
   end
 end
