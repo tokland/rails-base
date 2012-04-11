@@ -26,11 +26,15 @@ http://net.tutsplus.com/tutorials/ruby/create-beautiful-administration-interface
 
 = Enable Ruby-debug in Ruby 1.9.3
 
+Install:
+
 $ bash < <(curl -L https://raw.github.com/gist/1333785)
 $ curl -OL http://rubyforge.org/frs/download.php/75415/ruby-debug-base19-0.11.26.gem
 $ gem install ruby-debug-base19-0.11.26.gem -- --with-ruby-include=/home/arnau/.rvm/rubies/ruby-1.9.3-p0/include/ruby-1.9.1/ruby-1.9.3-p0/
 
-Gemfile -> gem "ruby-debug19", :require => "ruby-debug"
+Gemfile:
+
+gem "ruby-debug19", :require => "ruby-debug"
 
 = Thin models
 
