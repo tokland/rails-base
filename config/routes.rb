@@ -1,10 +1,10 @@
 Senergy::Application.routes.draw do
+  root :to => "home#show"
+  devise_for :users
+  resources :pages
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
-  
-  root :to => "homes#show"
-  resources :pages
-  devise_for :users
 end
 
-# ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml')
+#ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml')

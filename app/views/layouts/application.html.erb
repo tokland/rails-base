@@ -10,7 +10,8 @@
 
 <body>
   <%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
-   
+  <%= link_to("Home", root_path) %>
+  <br /><br />   
   <%= yield %>
 </body>
 </html>

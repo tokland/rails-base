@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe HomesController do
+describe HomeController do
   before { seed_database }
    
   render_views
 
   describe "routing" do
-    it { {:get => "/"}.should route_to(:controller => "homes", :action => "show") }
+    it { {:get => "/"}.should route_to(:controller => "home", :action => "show") }
   end
 
   describe "GET #show" do
@@ -14,6 +14,5 @@ describe HomesController do
 
     it { response.should be_success }
     it { response.should render_template('show') }
-    #it { response.should be_valid_xhtml }
   end
 end

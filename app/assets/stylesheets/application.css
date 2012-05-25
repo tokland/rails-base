@@ -12,3 +12,5 @@
 #notice a:hover, #error a:hover { color: #333; border: 1px solid #333; }
 
 .field_with_errors input { background-color: #FAA; }
+
+body { padding: 30px; }
