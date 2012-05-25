@@ -48,15 +48,11 @@ module Senergy
     config.assets.version = '1.0'
     
     config.paths["lib/tasks"] << "app/tasks"
-
-    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
-      include ActionView::Helpers::OutputSafetyHelper
-      raw %(<span class="field_with_errors">#{html_tag}</span>)
-    end    
   end
 
   require 'extensions'
   require 'rails_extensions'
   require 'active_record_extensions'
-  require 'sexy_scopes'  
+  require 'sexy_scopes'
+  require 'lazy'    
 end

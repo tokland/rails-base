@@ -16,25 +16,25 @@ describe Page do
   describe "scopes" do
     before do
       @pages = {
-        1 => create(:published_page), 
-        2 => create(:draft_page),
-        3 => create(:published_page), 
-        4 => create(:draft_page),
+        :published1 => create(:published_page), 
+        :published2 => create(:published_page), 
+        :draft1 => create(:draft_page),
+        :draft2 => create(:draft_page),
       }
     end
     
     describe "draft" do
-      it { Page.draft.should =~ @pages.values_at(2, 4) }
+      it { Page.draft.should =~ @pages.values_at(:draft1, :draft2) }
     end
 
     describe "published" do
-      it { Page.published.should =~ @pages.values_at(1, 3) }
+      it { Page.published.should =~ @pages.values_at(:published1, :published2) }
     end
   end
   
   describe "callbacks" do
     describe "before save" do
-      it "should set body_html from body (markdown format)" do
+      it "should set markdown on body_html from body" do
         page = create(:page, :body => "*hello*")
         page.body_html.should == "<p><em>hello</em></p>"
       end

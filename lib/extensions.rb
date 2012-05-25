@@ -20,6 +20,7 @@ module Enumerable
       value == value_for_skip ? acc : acc << value
     end
   end
+  
   def map_detect(value_for_no_matching = nil, &block)
     self.each do |member|
       if result = yield(member)
@@ -104,5 +105,20 @@ class OpenStruct
       [key, value2]
     end   
     OpenStruct.new(hash2)
+  end
+end
+
+class Array
+  def not_empty?
+    !empty?
+  end
+end
+
+class Hash
+  def defaults(defaults)
+    if (unknown_options = self.keys - defaults.keys).not_empty?
+      raise ArgumentError.new("Unknown option(s) passed: #{unknown_options.join(', ')}")
+    end
+    replace(defaults.merge(self))
   end
 end
