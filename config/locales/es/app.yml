@@ -24,15 +24,23 @@ es:
       page:
         one: página
         other: páginas
+      user:
+        one: usuario
+        other: usuarios
         
     attributes:
       page:
         title: título
         key: clave
         state: estado
-        estates:
+        body: cuerpo
+        slug: slug
+        language: idioma
+        states:
           draft: borrador 
           published: publicado
+        key_or_title_or_body: clave, título o cuerpo
+      
       user:
         email: Correo electrónico
         password: Contraseña

@@ -1,7 +1,7 @@
 class ActiveRecord::Base
   # User.han(:name) #=> "Name" 
-  def self.han(attr)
-    human_attribute_name(attr).titleize
+  def self.han(attribute)
+    human_attribute_name(attribute).titleize
   end
 
   # User.human_name_singular #=> "user"

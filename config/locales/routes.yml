@@ -1,0 +1,11 @@
+es:
+  pages: paginas
+  users: usuarios
+  
+  show: ver
+  new: nuevo
+  edit: editar
+  
+ca:
+  users: usuaris
+  pages: pagines

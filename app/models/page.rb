@@ -1,14 +1,14 @@
 class Page < ActiveRecord::Base
-  Statuses = ["draft", "published"]
+  States = ["draft", "published"]
   
   validates :language, :presence => true
   validates :key, :presence => true, :uniqueness => true
   validates :slug, :uniqueness => {:scope => :language}
   validates :title, :presence => true
-  validates :status, :presence => true, :inclusion => {:in => Statuses}
+  validates :state, :presence => true, :inclusion => {:in => States}
   
-  scope :published, where(:status => "published")
-  scope :draft, where(:status => "draft")
+  scope :published, where(Page[:state] == "published")
+  scope :draft, where(Page[:state] == "draft")
   
   before_save { |page| page.body_html = BlueCloth.new(body).to_html }
 end

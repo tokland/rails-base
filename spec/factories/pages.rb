@@ -6,14 +6,14 @@ FactoryGirl.define do
     title "title"
     body "body"
     body_html "<p>body</p>"
-    status "draft"
+    state "draft"
 
     factory :draft_page do
-      status "draft"
+      state "draft"
     end
 
     factory :published_page do
-      status "published"
+      state "published"
     end
   end
 end

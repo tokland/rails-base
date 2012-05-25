@@ -1,20 +1,17 @@
 ActiveAdmin.register Page do
   filter :key_or_title_or_body, :as => :string
-  filter :id
-  #filter :status, :as => :select, :collection => Page::Statuses
   
   scope :all, :default => true
   scope :published
   scope :draft
 
   show do
-    attributes_table :id, :key, :status, :slug, :language, :title, :body_html
+    attributes_table :key, :state, :slug, :language, :title, :body_html
   end
     
   index do
-    column :id
     column :key
-    column :status
+    column :state
     column :slug
     column :language
     column :title
@@ -28,7 +25,7 @@ ActiveAdmin.register Page do
         :collection => AppConfig.languages, :include_blank => false
       f.input :key
       f.input :slug
-      f.input :status, :as => :select, :collection => Page::Statuses, :include_blank => false
+      f.input :state, :as => :select, :collection => Page::States, :include_blank => false
     end
     
     f.inputs "Contents" do

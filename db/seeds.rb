@@ -17,8 +17,9 @@ logger.info("User##{user.id} created: #{user.email}/123123")
 page = Page.find_or_create!([:key], {
   :key => "help",
   :language => "es",
+  :state => "published",
   :slug => "help",
   :title => "Help",
-  :body => "Help body",
+  :body => "Help *body*",
 })
 logger.info("Page##{page.id} created: #{page.key}") 

@@ -98,6 +98,8 @@ es:
   errors:
     format: ! '%{attribute} %{message}'
     messages:
+      record_invalid: "no es válido: %{errors}"
+      not_saved: "no se ha podido salvar"
       accepted: debe ser aceptado
       blank: no puede estar en blanco
       confirmation: no coincide con la confirmación

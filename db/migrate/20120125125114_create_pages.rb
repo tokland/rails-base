@@ -7,7 +7,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.text :body_html
-      t.string :status
+      t.string :state
 
       t.timestamps
     end
