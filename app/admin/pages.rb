@@ -7,14 +7,18 @@ ActiveAdmin.register Page do
 
   show do
     attributes_table do
-      rows :key, :state, :slug, :language, :title
+      row :key
+      row(:state) { |page| page.state_translated }
+      row :slug
+      row :language
+      row :title
       row(:body_html) { |page| render_page(page) }
     end
   end
     
   index do
     column :key
-    column :state
+    column(:state, :sortable => :state) { |page| page.state_translated }
     column :slug
     column :language
     column :title
@@ -28,7 +32,7 @@ ActiveAdmin.register Page do
         :collection => AppConfig.languages, :include_blank => false
       f.input :key
       f.input :slug
-      f.input :state, :as => :select, :collection => Page::States, :include_blank => false
+      f.input :state, :as => :select, :collection => Page::StatesTranslated, :include_blank => false
     end
     
     f.inputs "Contents" do

@@ -48,3 +48,12 @@ es:
   users:
     new:
       signup: "Registro"
+      
+  active_admin:
+    scopes:
+      all: Todos
+    actions: Acciones
+    confirm_delete: ¿Estás seguro de que quieres borrar este elemento?
+    batch_actions:
+      button_label: Acciones
+      action_label: "%{title}"

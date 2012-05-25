@@ -7,6 +7,8 @@ class Page < ActiveRecord::Base
   validates :title, :presence => true
   validates :state, :presence => true, :inclusion => {:in => States}
   
+  translate :state
+  
   scope :published, where(Page[:state] == "published")
   scope :draft, where(Page[:state] == "draft")
   
