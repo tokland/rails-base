@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe PagesHelper do
   before do 
-    Factory(:draft_page, :title => 'mytitle', :key => 'mykey_draft') 
-    Factory(:published_page, :title => 'mytitle', :key => 'mykey_published')
+    create(:draft_page, :title => 'mytitle', :key => 'mykey_draft') 
+    create(:published_page, :title => 'mytitle', :key => 'mykey_published')
   end
     
   describe "link_to_page" do

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Page do
   describe "validations" do
-    subject { Factory(:page) }
+    subject { create(:page) }
   
     it { should validate_presence_of :title }
     it { should validate_presence_of(:state) }
@@ -16,10 +16,10 @@ describe Page do
   describe "scopes" do
     before do
       @pages = {
-        1 => Factory(:published_page), 
-        2 => Factory(:draft_page),
-        3 => Factory(:published_page), 
-        4 => Factory(:draft_page),
+        1 => create(:published_page), 
+        2 => create(:draft_page),
+        3 => create(:published_page), 
+        4 => create(:draft_page),
       }
     end
     
@@ -35,7 +35,7 @@ describe Page do
   describe "callbacks" do
     describe "before save" do
       it "should set body_html from body (markdown format)" do
-        page = Factory.create(:page, :body => "*hello*")
+        page = create(:page, :body => "*hello*")
         page.body_html.should == "<p><em>hello</em></p>"
       end
     end 

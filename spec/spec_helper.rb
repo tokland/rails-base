@@ -8,7 +8,7 @@ Spork.prefork do
   require 'capybara/rails'
   require 'factory_girl'
   require "cancan/matchers"
-  require "support/application"
+  Dir.glob(File.join(Rails.root, "spec/support/*.rb")).each { |file| require(file) }
   
   Capybara.javascript_driver = :webkit # :webkit | :selenium
 
@@ -17,12 +17,13 @@ Spork.prefork do
     config.use_transactional_fixtures = true
     config.include Devise::TestHelpers, :type => :controller
     config.include Senergy::AppHelpers
+    config.include FactoryGirl::Syntax::Methods
+    config.extend ControllerMacros, :type => :controller
   end
 end
 
 Spork.each_run do
   load "#{Rails.root}/config/routes.rb"
-  load File.join(Rails.root, "app/models/user.rb")
   FactoryGirl.reload
 end
 

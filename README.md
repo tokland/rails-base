@@ -1,3 +1,3 @@
 # Rails-base
 
-Here I'll keep a base Rails tree to start new projects.
+Template tree to start new Rails 3 projects.
