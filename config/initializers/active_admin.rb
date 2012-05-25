@@ -150,7 +150,9 @@ ActiveAdmin.setup do |config|
   
   config.register_javascript "items_list"
   config.register_javascript "chosen.jquery"
-
+  config.register_javascript "admin/common"
+  config.register_javascript "admin/pages"
+  
   I18n.locale = :es
   
   config.default_per_page = 20

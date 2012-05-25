@@ -6,7 +6,10 @@ ActiveAdmin.register Page do
   scope :draft
 
   show do
-    attributes_table :key, :state, :slug, :language, :title, :body_html
+    attributes_table do
+      rows :key, :state, :slug, :language, :title
+      row(:body_html) { |page| render_page(page) }
+    end
   end
     
   index do
