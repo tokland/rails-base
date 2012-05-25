@@ -29,10 +29,8 @@ module Senergy
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
-
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :en
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+    config.i18n.default_locale = :es
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
@@ -48,6 +46,8 @@ module Senergy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.paths["lib/tasks"] << "app/tasks"
 
     ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
       include ActionView::Helpers::OutputSafetyHelper
@@ -56,7 +56,7 @@ module Senergy
   end
 
   require 'extensions'
+  require 'rails_extensions'
   require 'active_record_extensions'
-  require 'action_dispatch_extensions'
   require 'sexy_scopes'  
 end

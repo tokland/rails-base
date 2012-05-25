@@ -21,4 +21,4 @@ page = Page.find_or_create!([:key], {
   :title => "Help",
   :body => "Help body",
 })
-logger.info("Page##{page.id} created: #{page.key}")
+logger.info("Page##{page.id} created: #{page.key}") 

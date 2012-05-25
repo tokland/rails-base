@@ -7,7 +7,6 @@ Spork.prefork do
   require 'capybara/rspec'
   require 'capybara/rails'
   require 'factory_girl'
-  require 'html_validator'
   require "cancan/matchers"
   require "support/application"
   

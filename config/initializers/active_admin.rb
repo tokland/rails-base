@@ -1,3 +1,28 @@
+# See https://groups.google.com/group/activeadmin/browse_thread/thread/52f9f73dfad9be9f
+ActiveAdmin::Application.class_eval do 
+  alias :load_method :load!
+  
+  def load!
+    instance = self # needed for access via closure
+    ActiveSupport.on_load(:after_initialize) do
+      instance.load_method
+    end
+  end
+end
+
+module HelpersExtensions
+  module Helpers
+    extend ApplicationHelper
+  end
+  
+  def helper(*args)
+    Helpers.send(*args)
+  end
+end
+
+ActiveAdmin::ResourceDSL.send(:include, HelpersExtensions)
+ActiveAdmin::Views::Pages::Form.send(:include, HelpersExtensions)
+  
 ActiveAdmin.setup do |config|
   # == Site Title
   #
@@ -56,7 +81,6 @@ ActiveAdmin.setup do |config|
   # within the controller.
   config.authentication_method = :authenticate_admin_user!
 
-
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -65,7 +89,6 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # to return the currently logged in user.
   config.current_user_method = :current_admin_user
-
 
   # == Logging Out
   #
@@ -77,7 +100,7 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
-  # config.logout_link_path = :destroy_admin_user_session_path
+  config.logout_link_path = :destroy_admin_user_session_path
 
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
@@ -104,17 +127,31 @@ ActiveAdmin.setup do |config|
 
   # == Controller Filters
   #
-  # You can add before, after and around filters to all of your
-  # Active Admin resources from here.
-  #
-  # config.before_filter :do_something_awesome
+  config.before_filter :set_admin_locale
+  
+  def set_admin_locale
+    I18n.locale = :es 
+  end  
 
   config.register_stylesheet 'markdown.css'
+  config.register_stylesheet 'jquery-ui-1.8.18.custom.css'
+  config.register_stylesheet 'jquery-ui-timepicker-addon.css'
+  config.register_stylesheet "chosen"
   
   config.register_javascript "jquery_extensions"
+  config.register_javascript "jquery-ui-timepicker-addon"
+  
+  config.register_javascript "underscore"
+  config.register_javascript "underscore_extensions"
+  
   config.register_javascript "Markdown.Converter"
   config.register_javascript "Markdown.Sanitizer"
   config.register_javascript "Markdown.Editor"
-  config.register_javascript "admin/common"
-  config.register_javascript "admin/pages"
+  
+  config.register_javascript "items_list"
+  config.register_javascript "chosen.jquery"
+
+  I18n.locale = :es
+  
+  config.default_per_page = 20
 end

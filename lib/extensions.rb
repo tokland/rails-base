@@ -14,6 +14,12 @@ module Enumerable
     end
   end
 
+  def map_select(value_for_skip = nil)
+    self.inject([]) do |acc, item|
+      value = yield(item)
+      value == value_for_skip ? acc : acc << value
+    end
+  end
   def map_detect(value_for_no_matching = nil, &block)
     self.each do |member|
       if result = yield(member)
@@ -32,7 +38,25 @@ class MaybeWrapper
   end
 end
 
+class String
+  def splitAt(idx)
+    [self[0...idx], self[idx..-1]] 
+  end
+end
+
 class Object
+  def to_bool
+    !!self
+  end
+
+  def whitelist(*valids)
+    valids.include?(self) ? self : nil
+  end
+
+  def blacklist(*valids)
+    valids.include?(self) ? nil : self
+  end
+
   def or_else(options = {}, &block)
     if options[:if]
       self.send(options[:if]) ? yield : self
@@ -60,7 +84,25 @@ class Object
     enumerable.include?(self)
   end
 
-  def maybe
-    self.nil? ? MaybeWrapper.new : self
+  def not_in?(enumerable)
+    !enumerable.include?(self)
+  end
+
+  def maybe(&block)
+    if block_given?
+      nil? ? nil : yield(self)  
+    else
+      nil? ? MaybeWrapper.new : self
+    end
+  end
+end
+
+class OpenStruct
+  def self.new_recursive(hash)
+    hash2 = hash.mash do |key, value|
+      value2 = value.is_a?(Hash) ? OpenStruct.new_recursive(value) : value
+      [key, value2]
+    end   
+    OpenStruct.new(hash2)
   end
 end

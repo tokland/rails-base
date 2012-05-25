@@ -19,8 +19,20 @@ es:
       models:
         user:
           attributes:
-          
+
+    models:
+      page:
+        one: página
+        other: páginas
+        
     attributes:
+      page:
+        title: título
+        key: clave
+        state: estado
+        estates:
+          draft: borrador 
+          published: publicado
       user:
         email: Correo electrónico
         password: Contraseña
