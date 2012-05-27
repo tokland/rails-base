@@ -17,7 +17,7 @@ module Senergy
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
-    config.autoload_paths += Dir.glob(File.join(config.root, "lib/**/*"))
+    config.autoload_paths += Dir.glob(Rails.root.join("lib/**/*"))
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -29,7 +29,7 @@ module Senergy
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+    config.i18n.load_path += Dir.glob(Rails.root.join('config', 'locales', '**', '*.yml'))
     config.i18n.default_locale = :es
 
     # JavaScript files you want as :defaults (application.js is always included).
@@ -46,7 +46,8 @@ module Senergy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-    
+   
+    # Use app/tasks for application-specific tasks  
     config.paths["lib/tasks"] << "app/tasks"
   end
 
@@ -54,5 +55,4 @@ module Senergy
   require 'rails_extensions'
   require 'active_record_extensions'
   require 'sexy_scopes'
-  require 'lazy'    
 end

@@ -20,6 +20,7 @@ gem 'activeadmin', :git => 'git://github.com/tokland/active_admin.git'
 gem 'sass-rails'
 gem "meta_search", '>= 1.1.0.pre'
 gem "bluecloth"
+gem "enumerable-lazy"
 gem 'exception_notification',  
   :git => 'git://github.com/smartinez87/exception_notification.git'
 #gem 'simple_form'
