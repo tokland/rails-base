@@ -115,10 +115,10 @@ class Array
 end
 
 class Hash
-  def defaults(defaults)
-    if (unknown_options = self.keys - defaults.keys).not_empty?
-      raise ArgumentError.new("Unknown option(s) passed: #{unknown_options.join(', ')}")
-    end
-    replace(defaults.merge(self))
+  def defaults(hash)
+    unknown_options = self.keys - hash.keys
+    unknown_options.empty? or
+      raise ArgumentError.new("Unknown option(s): #{unknown_options.join(', ')}")
+    replace(hash.merge(self))
   end
 end

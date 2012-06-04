@@ -1,13 +1,15 @@
 require 'active_record'
 require 'arel'
 
-# Ruby-like syntax for ActiveRecord+Arel conditions. This standard code:
+# Ruby-like syntax in AR conditions using the underlying Arel layer (Rails >= 3.0).
 #
-#   >> User.where(["users.created_at > ? AND users.name LIKE ?", Date.yesterday, "Mary"])
+# What you would usually write like this: 
 #
-# can be written like this:
+#   User.where(["users.created_at > ? AND users.name LIKE ?", Date.yesterday, "Mary"])
+#
+# can now be written like this:
 # 
-#   >> User.where((User[:created_at] > Date.yesterday) & (User[:name] =~ "Mary"))
+#   User.where((User[:created_at] > Date.yesterday) & (User[:name] =~ "Mary"))
 #
 module ArelExtensions
   module ActiveRecord
@@ -16,24 +18,32 @@ module ArelExtensions
     end
   end
   
-  Nodes = proc do
-    alias_method :&, :and
-    alias_method :|, :or
+  module Nodes
+    def self.included(base)
+      base.class_eval do 
+        alias_method :&, :and
+        alias_method :|, :or
+      end
+    end
   end
 
-  Predications = proc do
-    alias_method :<,  :lt
-    alias_method :<=, :lteq
-    alias_method :==, :eq
-    alias_method :>=, :gteq
-    alias_method :>,  :gt
-    alias_method :=~, :matches
-    alias_method :^,  :not_eq
-    alias_method :>>, :in
-    alias_method :<<, :not_in
+  module Predications
+    def self.included(base)
+      base.class_eval do
+        alias_method :<,  :lt
+        alias_method :<=, :lteq
+        alias_method :==, :eq
+        alias_method :>=, :gteq
+        alias_method :>,  :gt
+        alias_method :=~, :matches
+        alias_method :^,  :not_eq
+        alias_method :>>, :in
+        alias_method :<<, :not_in
+      end
+    end
   end  
 end
 
 ActiveRecord::Base.extend(ArelExtensions::ActiveRecord::ClassMethods)
-Arel::Nodes::Node.class_eval(&ArelExtensions::Nodes)
-Arel::Predications.class_eval(&ArelExtensions::Predications)
+Arel::Nodes::Node.send(:include, ArelExtensions::Nodes) 
+Arel::Predications.send(:include, ArelExtensions::Predications)
